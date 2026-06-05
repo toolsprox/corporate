@@ -80,7 +80,7 @@ export default function Home() {
             <div className="flex gap-4">
               <div className="flex items-center gap-2 text-[#7CFF01]">
                 <Star className="w-5 h-5 fill-current" />
-                <span className="font-bold text-white">Chef's Special</span>
+                <span className="font-bold text-white">Chef&apos;s Special</span>
               </div>
             </div>
           </div>
