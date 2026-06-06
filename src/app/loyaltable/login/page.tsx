@@ -44,8 +44,8 @@ export default function LoginPage() {
         className="relative z-10 w-full max-w-md p-8 sm:p-10 glass-floating rounded-3xl"
       >
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-serif font-bold text-[#064E3B] mb-2">Loyaltable</h1>
-          <p className="text-[#064E3B]/60 text-sm font-medium">Exclusive rewards for our distinguished guests.</p>
+          <h1 className="text-3xl font-serif font-bold text-[#0F0F0F] mb-2">Loyaltable</h1>
+          <p className="text-[#0F0F0F]/60 text-sm font-medium">Exclusive rewards for our distinguished guests.</p>
         </div>
 
         {error && (
@@ -56,9 +56,9 @@ export default function LoginPage() {
 
         <form onSubmit={handleLogin} className="space-y-6">
           <div className="space-y-2">
-            <label className="text-xs font-bold text-[#064E3B]/80 uppercase tracking-wider">Email Address</label>
+            <label className="text-xs font-bold text-[#0F0F0F]/80 uppercase tracking-wider">Email Address</label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[#064E3B]/40">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[#0F0F0F]/40">
                 <Mail className="w-5 h-5" />
               </div>
               <input
@@ -67,15 +67,15 @@ export default function LoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="admin@masakali.co.uk"
                 required
-                className="w-full bg-white/50 border border-white rounded-xl py-3 pl-12 pr-4 text-[#064E3B] placeholder:text-[#064E3B]/30 focus:outline-none focus:border-[#7CFF01] focus:ring-1 focus:ring-[#7CFF01] transition-all shadow-inner"
+                className="w-full bg-white/50 border border-white rounded-xl py-3 pl-12 pr-4 text-[#0F0F0F] placeholder:text-[#0F0F0F]/30 focus:outline-none focus:border-[#7CFF01] focus:ring-1 focus:ring-[#7CFF01] transition-all shadow-inner"
               />
             </div>
           </div>
 
           <div className="space-y-2">
-            <label className="text-xs font-bold text-[#064E3B]/80 uppercase tracking-wider">Password</label>
+            <label className="text-xs font-bold text-[#0F0F0F]/80 uppercase tracking-wider">Password</label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[#064E3B]/40">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[#0F0F0F]/40">
                 <Lock className="w-5 h-5" />
               </div>
               <input
@@ -84,7 +84,7 @@ export default function LoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
                 required
-                className="w-full bg-white/50 border border-white rounded-xl py-3 pl-12 pr-4 text-[#064E3B] placeholder:text-[#064E3B]/30 focus:outline-none focus:border-[#7CFF01] focus:ring-1 focus:ring-[#7CFF01] transition-all shadow-inner"
+                className="w-full bg-white/50 border border-white rounded-xl py-3 pl-12 pr-4 text-[#0F0F0F] placeholder:text-[#0F0F0F]/30 focus:outline-none focus:border-[#7CFF01] focus:ring-1 focus:ring-[#7CFF01] transition-all shadow-inner"
               />
             </div>
           </div>

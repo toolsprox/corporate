@@ -5,96 +5,107 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-sans: var(--font-poppins);
   --font-serif: var(--font-poppins);
-  
-  --color-brand-neon: #7CFF01;
-  --color-brand-emerald: #064E3B;
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
 }
 
 @layer base {
   :root {
-    --background: #FAFAFA;
-    --foreground: #111827;
+    /* Very dark blue / Navy */
+    --background: #0A1128; 
+    --foreground: #f8fafc; /* Crisp white for text */
+
+    /* Glassmorphism base for cards */
+    --card: rgba(255, 255, 255, 0.03);
+    --card-foreground: #f8fafc;
+
+    --popover: #0f172a;
+    --popover-foreground: #f8fafc;
+
+    /* Bright Neon Green */
+    --primary: #7CFF01; 
+    --primary-foreground: #0A1128;
+
+    --secondary: #1e293b;
+    --secondary-foreground: #7CFF01;
+
+    --muted: #1e293b;
+    --muted-foreground: #94a3b8;
+
+    --accent: #7CFF01;
+    --accent-foreground: #0A1128;
+
+    --destructive: #ef4444;
+    --destructive-foreground: #f8fafc;
+
+    /* Subtle borders for glass */
+    --border: rgba(255, 255, 255, 0.1);
+    --input: rgba(255, 255, 255, 0.1);
+    --ring: #7CFF01;
+
+    --radius: 1rem; /* Softer radius for modern look */
   }
 }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  overflow-x: hidden;
-}
-
-/* 
-  Animated Mesh Gradient Background 
-  A beautiful, subtle, flowing background for the glassmorphism elements to sit on top of.
-*/
-.mesh-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background-color: #FAFAFA;
-  background-image: 
-    radial-gradient(at 40% 20%, hsla(88,100%,90%,1) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, hsla(189,100%,96%,1) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, hsla(88,100%,95%,1) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, hsla(60,100%,97%,1) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, hsla(220,100%,98%,1) 0px, transparent 50%),
-    radial-gradient(at 80% 100%, hsla(88,100%,92%,1) 0px, transparent 50%),
-    radial-gradient(at 0% 0%, hsla(0,0%,100%,1) 0px, transparent 50%);
-  animation: breathe 15s ease-in-out infinite alternate;
-}
-
-@keyframes breathe {
-  0% {
-    transform: scale(1);
+@layer base {
+  * {
+    @apply border-border;
   }
-  100% {
-    transform: scale(1.05);
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-/* 
-  Glassmorphism Utility Classes 
-*/
-.glass-panel {
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255,255,255,0.5);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.glass-panel:hover {
-  box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(255,255,255,0.8);
-  transform: translateY(-2px);
-}
-
-/* Harder shadow for floating elements like the header */
-.glass-floating {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 1);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-}
-
-/* Digital Wallet Card */
-.wallet-card {
-  background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 100%);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  border: 1px solid rgba(255, 255, 255, 1);
-  border-top: 1px solid rgba(255, 255, 255, 1);
-  border-left: 1px solid rgba(255, 255, 255, 1);
-  box-shadow: 
-    0 30px 60px rgba(0,0,0,0.1),
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 1px 0 0 rgba(255,255,255,1);
-  border-radius: 24px;
+/* Custom utility classes for premium feel */
+@layer utilities {
+  .text-neon {
+    color: var(--primary);
+  }
+  .bg-neon {
+    background-color: var(--primary);
+  }
+  .border-neon {
+    border-color: var(--primary);
+  }
+  
+  /* Enhanced Glassmorphism styling */
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+  }
+  
+  /* Glowing Orb background */
+  .glow-orb {
+    @apply absolute rounded-full blur-[100px] opacity-40 mix-blend-screen pointer-events-none;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+  }
 }

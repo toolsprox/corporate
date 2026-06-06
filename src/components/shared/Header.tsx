@@ -34,9 +34,11 @@ export default function Header() {
         <div className="flex items-center justify-between px-6 py-4">
           
           {/* Logo */}
-          <Link href="/" className="relative z-10 flex flex-col">
-            <span className="font-serif text-2xl font-bold tracking-widest text-[#064E3B] uppercase">Masakali</span>
-            <span className="text-[0.6rem] tracking-[0.2em] text-[#064E3B]/60 uppercase ml-1">London</span>
+          <Link href="/" className="flex flex-col z-50">
+            <span className="font-serif text-xl sm:text-2xl font-bold tracking-widest text-foreground uppercase">
+              Masakali
+            </span>
+            <span className="text-[10px] sm:text-xs tracking-[0.2em] text-[#7CFF01] uppercase font-bold italic -mt-1">London.</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -45,7 +47,7 @@ export default function Header() {
               <Link 
                 key={link.name} 
                 href={link.path}
-                className="text-sm font-bold tracking-wider uppercase text-[#064E3B]/80 hover:text-[#064E3B] transition-colors relative group"
+                className="text-sm font-bold tracking-wider uppercase text-[#0F0F0F]/80 hover:text-[#0F0F0F] transition-colors relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#7CFF01] transition-all group-hover:w-full"></span>
@@ -53,7 +55,7 @@ export default function Header() {
             ))}
             <Link 
               href="/reservations"
-              className="px-6 py-2.5 rounded-full bg-[#064E3B] text-white text-sm font-bold uppercase tracking-widest hover:bg-[#7CFF01] hover:text-[#064E3B] transition-all shadow-[0_4px_14px_rgba(6,78,59,0.3)] hover:shadow-[0_4px_20px_rgba(124,255,1,0.4)]"
+              className="px-6 py-2.5 rounded-full bg-[#0F0F0F] text-white text-sm font-bold uppercase tracking-widest hover:bg-[#7CFF01] hover:text-[#0F0F0F] transition-all shadow-[0_4px_14px_rgba(6,78,59,0.3)] hover:shadow-[0_4px_20px_rgba(124,255,1,0.4)]"
             >
               Book Table
             </Link>
@@ -61,7 +63,7 @@ export default function Header() {
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden relative z-10 text-[#064E3B] p-2"
+            className="md:hidden relative z-10 text-[#0F0F0F] p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -82,7 +84,7 @@ export default function Header() {
               key={link.name} 
               href={link.path}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-xl font-serif font-bold text-[#064E3B]"
+              className="text-xl font-serif font-bold text-[#0F0F0F]"
             >
               {link.name}
             </Link>
@@ -90,7 +92,7 @@ export default function Header() {
           <Link 
             href="/reservations"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="w-full text-center py-4 rounded-xl bg-[#064E3B] text-white font-bold uppercase tracking-widest mt-4"
+            className="w-full text-center py-4 rounded-xl bg-[#0F0F0F] text-white font-bold uppercase tracking-widest mt-4"
           >
             Book a Table
           </Link>
