@@ -45,7 +45,7 @@ export default function StudentsPage() {
             Looking for an affordable Indian restaurant in London without compromising on quality? Show your valid student ID and unlock an exclusive 15% discount for you and your mates.
           </p>
           
-          <div className="flex justify-center gap-6">
+          <div className="flex justify-center gap-6 mb-16">
             <Link href="/reserve?segment=student" className="group relative bg-[#0F0F0F] text-white font-bold px-10 py-5 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_rgba(124,255,1,0.3)] transition-all">
               <span className="relative z-10 flex items-center">
                 Claim 15% Off Table <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -56,6 +56,15 @@ export default function StudentsPage() {
               </span>
             </Link>
           </div>
+
+          {/* Hero Image */}
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }}
+            className="relative w-full h-[500px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
+          >
+            <Image src="/images/students_dining.png" alt="Students enjoying modern Indian street food" fill className="object-cover hover:scale-105 transition-transform duration-[2s]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
+          </motion.div>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 mt-16 relative">

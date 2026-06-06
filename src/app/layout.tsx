@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import Preloader from "@/components/shared/Preloader";
+import MobileCTA from "@/components/shared/MobileCTA";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -30,6 +31,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <MobileCTA />
       </body>
     </html>
   );

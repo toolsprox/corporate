@@ -44,6 +44,15 @@ export default function CelebrationsPage() {
           <p className="text-xl text-black/60 mb-12 max-w-2xl mx-auto leading-relaxed">
             Whether it's a family reunion, a milestone birthday, or a weekend gathering, Masakali London is the perfect venue for large groups seeking the best Indian food in the city.
           </p>
+
+          {/* Hero Image */}
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }}
+            className="relative w-full h-[500px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl mb-12"
+          >
+            <Image src="/images/celebrations_dining.png" alt="Family celebrating a birthday with large Indian feast" fill className="object-cover hover:scale-105 transition-transform duration-[2s]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+          </motion.div>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 mt-16 text-left relative">

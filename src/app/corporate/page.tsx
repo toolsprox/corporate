@@ -93,8 +93,8 @@ export default function CorporatePage() {
             transition={{ duration: 1, type: "spring", bounce: 0.4 }}
             className="relative h-[700px] w-full rounded-[2.5rem] overflow-hidden border border-white/10 group"
           >
-            <Image src="/images/hero_bbq_chicken.png" alt="Upscale Indian Dining" fill className="object-cover mix-blend-screen opacity-70 group-hover:scale-105 transition-transform duration-1000" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+            <Image src="/images/corporate_dining.png" alt="Upscale Corporate Indian Dining" fill className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none"></div>
             
             {/* Floating Glass Card */}
             <motion.div 
