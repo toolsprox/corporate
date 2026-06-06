@@ -74,7 +74,7 @@ export default function StudentsPage() {
                 <div className="smoke"></div>
                 <div className="smoke"></div>
               </div>
-              <Image src="/images/hero_biryani_top.png" alt="Signature Biryani" fill className="object-contain mix-blend-multiply" priority />
+              <Image src="/images/user_upload_1.png" alt="Signature Student Dish" fill className="object-contain" priority />
             </motion.div>
           </div>
         </motion.div>

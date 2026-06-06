@@ -93,7 +93,7 @@ export default function CorporatePage() {
                 <div className="smoke"></div>
                 <div className="smoke"></div>
               </div>
-              <Image src="/images/hero_bbq_chicken.png" alt="Signature Corporate Dish" fill className="object-contain mix-blend-multiply opacity-90" priority />
+              <Image src="/images/user_upload_1.png" alt="Signature Corporate Dish" fill className="object-contain opacity-90" priority />
             </motion.div>
             
             {/* Floating Glass Card */}

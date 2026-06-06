@@ -62,7 +62,7 @@ export default function CelebrationsPage() {
                 <div className="smoke"></div>
                 <div className="smoke"></div>
               </div>
-              <Image src="/images/top_barbecue.png" alt="Signature Sharing Platter" fill className="object-contain mix-blend-multiply" priority />
+              <Image src="/images/user_upload_1.png" alt="Signature Sharing Platter" fill className="object-contain" priority />
             </motion.div>
           </div>
         </motion.div>

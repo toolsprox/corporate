@@ -110,10 +110,10 @@ export default function Home() {
                 <div className="smoke"></div>
               </div>
               <Image
-                src="/images/hero_bbq_chicken.png"
+                src="/images/user_upload_1.png"
                 alt="Signature Masakali Dish"
                 fill
-                className="object-contain mix-blend-multiply"
+                className="object-contain"
                 priority
               />
             </motion.div>
@@ -265,7 +265,7 @@ export default function Home() {
                       <div className="smoke" style={{ animationDelay: '0.5s' }}></div>
                       <div className="smoke" style={{ animationDelay: '2s' }}></div>
                     </div>
-                    <Image src={item.image} alt={item.name} fill className="object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" />
+                    <Image src="/images/user_upload_1.png" alt={item.name} fill className="object-contain group-hover:scale-110 transition-transform duration-500" />
                    </motion.div>
                 </div>
                 <h3 className="font-serif text-2xl font-bold mb-2">{item.name}</h3>
