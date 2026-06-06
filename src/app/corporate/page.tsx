@@ -88,25 +88,34 @@ export default function CorporatePage() {
           </motion.div>
 
           <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, type: "spring", bounce: 0.4 }}
-            className="relative h-[700px] w-full rounded-[2.5rem] overflow-hidden border border-white/10 group"
+            initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }}
+            className="relative h-[600px] w-full flex items-center justify-center group"
           >
-            <Image src="/images/corporate_dining.png" alt="Upscale Corporate Indian Dining" fill className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none"></div>
+            <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 50, ease: "linear" }} className="w-[90%] h-[90%] relative z-10 origin-center filter drop-shadow-[0_30px_40px_rgba(124,255,1,0.15)] group-hover:scale-105 transition-transform duration-700">
+              <div className="smoke-container">
+                <div className="smoke"></div>
+                <div className="smoke"></div>
+                <div className="smoke"></div>
+                <div className="smoke"></div>
+              </div>
+              <Image src="/images/hero_bbq_chicken.png" alt="Signature Corporate Dish" fill className="object-contain mix-blend-screen opacity-90" priority />
+            </motion.div>
             
             {/* Floating Glass Card */}
             <motion.div 
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute bottom-10 left-10 right-10 glass-card-dark p-8 rounded-3xl border border-white/10 backdrop-blur-xl"
+              className="absolute bottom-4 left-4 right-4 z-20 glass-card-dark p-6 rounded-3xl border border-[#7CFF01]/20 backdrop-blur-xl shadow-2xl"
             >
-              <div className="w-14 h-14 bg-[#7CFF01]/20 rounded-full flex items-center justify-center mb-4 border border-[#7CFF01]/30">
-                <ShieldCheck className="w-8 h-8 text-[#7CFF01]" />
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-[#7CFF01]/20 rounded-full flex items-center justify-center border border-[#7CFF01]/30 shrink-0">
+                  <ShieldCheck className="w-6 h-6 text-[#7CFF01]" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg text-white mb-1">Corporate Accounts</h3>
+                  <p className="text-white/60 text-xs">Set up a corporate tab for seamless, monthly billing.</p>
+                </div>
               </div>
-              <h3 className="font-bold text-2xl text-white mb-2">Corporate Accounts</h3>
-              <p className="text-white/60">Contact our management team to set up a corporate tab for seamless, monthly billing.</p>
             </motion.div>
           </motion.div>
         </div>

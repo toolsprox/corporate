@@ -45,13 +45,20 @@ export default function CelebrationsPage() {
             Whether it's a family reunion, a milestone birthday, or a weekend gathering, Masakali London is the perfect venue for large groups seeking the best Indian food in the city.
           </p>
 
-          {/* Hero Image */}
+          {/* Spinning Food Element */}
           <motion.div 
-            initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }}
-            className="relative w-full h-[500px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl mb-12"
+            initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }}
+            className="relative w-full max-w-[600px] h-[500px] mx-auto flex items-center justify-center mb-12"
           >
-            <Image src="/images/celebrations_dining.png" alt="Family celebrating a birthday with large Indian feast" fill className="object-cover hover:scale-105 transition-transform duration-[2s]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+            <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 45, ease: "linear" }} className="w-[85%] h-[85%] relative z-10 origin-center filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.15)]">
+              <div className="smoke-container">
+                <div className="smoke"></div>
+                <div className="smoke"></div>
+                <div className="smoke"></div>
+                <div className="smoke"></div>
+              </div>
+              <Image src="/images/top_barbecue.png" alt="Signature Sharing Platter" fill className="object-contain mix-blend-multiply" priority />
+            </motion.div>
           </motion.div>
         </motion.div>
 
