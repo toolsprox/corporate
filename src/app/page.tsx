@@ -171,7 +171,7 @@ export default function Home() {
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.8, type: "spring", bounce: 0.4 }}
                 className="glass-card p-8 hover:shadow-deep hover:border-[#7CFF01]/50 transition-all duration-500 cursor-pointer h-full flex flex-col perspective-1000 transform-style-3d hover:-translate-y-2"
               >
@@ -244,7 +244,7 @@ export default function Home() {
                 key={idx}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
                 className="glass-card p-6 hover:shadow-deep hover:border-[#7CFF01]/50 transition-all duration-500 group relative perspective-1000 transform-style-3d hover:-translate-y-2"
               >
@@ -281,7 +281,7 @@ export default function Home() {
               key={idx} 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true }}
               transition={{ delay: idx * 0.15, duration: 0.8, type: "spring" }}
               className="glass-card p-8 hover:shadow-deep transition-all duration-500 transform hover:-translate-y-2"
             >

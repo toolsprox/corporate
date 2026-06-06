@@ -45,41 +45,42 @@ export default async function LoyaltableDashboard() {
           
           {/* Main Wallet Card (Apple Wallet Style) */}
           <div className="lg:col-span-5 relative group perspective">
-            <div className="wallet-card w-full aspect-[1/1.5] sm:aspect-[1.6/1] lg:aspect-[1/1.6] p-8 flex flex-col justify-between relative overflow-hidden transition-transform duration-500 transform-style-3d group-hover:rotate-y-2 group-hover:rotate-x-2">
+            <div className="w-full aspect-[1/1.5] sm:aspect-[1.6/1] lg:aspect-[1/1.6] p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-700 transform-style-3d group-hover:rotate-y-4 group-hover:-rotate-x-4 bg-[#0F0F0F]/90 backdrop-blur-3xl border border-white/20 rounded-[40px] shadow-[0_40px_80px_rgba(0,0,0,0.3),inset_0_2px_10px_rgba(255,255,255,0.2)]">
               
-              {/* Card Background Pattern */}
-              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#0F0F0F] via-transparent to-transparent bg-[length:20px_20px]"></div>
+              {/* Card Background Glow & Pattern */}
+              <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#7CFF01] rounded-full blur-[80px] opacity-20 pointer-events-none"></div>
+              <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent bg-[length:20px_20px]"></div>
               
               <div className="relative z-10 flex justify-between items-start">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-[#0F0F0F] flex items-center justify-center">
-                    <Crown className="w-4 h-4 text-white" />
+                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20 shadow-[inset_0_2px_4px_rgba(255,255,255,0.3)]">
+                    <Crown className="w-5 h-5 text-[#7CFF01]" />
                   </div>
-                  <span className="font-serif font-bold text-[#0F0F0F] tracking-widest uppercase">Masakali</span>
+                  <span className="font-serif font-bold text-white tracking-widest uppercase text-lg drop-shadow-md">Masakali</span>
                 </div>
                 <div className="text-right">
-                  <p className="text-[0.65rem] font-bold tracking-widest text-[#0F0F0F]/50 uppercase mb-1">Tier</p>
-                  <p className="text-sm font-bold text-[#0F0F0F] uppercase tracking-wider bg-[#7CFF01]/20 px-3 py-1 rounded-full border border-[#7CFF01]/50">{userProfile.tier}</p>
+                  <p className="text-[0.65rem] font-bold tracking-widest text-white/50 uppercase mb-1">Tier</p>
+                  <p className="text-xs font-bold text-[#0F0F0F] uppercase tracking-wider bg-[#7CFF01] px-3 py-1 rounded-full shadow-[0_0_15px_rgba(124,255,1,0.4)]">{userProfile.tier}</p>
                 </div>
               </div>
 
               <div className="relative z-10 mt-auto mb-12 sm:mb-8 lg:mb-12">
-                <p className="text-xs font-bold tracking-widest text-[#0F0F0F]/50 uppercase mb-2">Available Balance</p>
-                <p className="text-5xl sm:text-6xl font-serif font-bold text-[#0F0F0F] tracking-tight">{userProfile.walletBalance}</p>
-                <div className="flex items-center gap-2 mt-4 text-sm font-medium text-[#0F0F0F]/70">
+                <p className="text-xs font-bold tracking-widest text-white/50 uppercase mb-2">Available Balance</p>
+                <p className="text-5xl sm:text-6xl font-serif font-bold text-white tracking-tight drop-shadow-lg">{userProfile.walletBalance}</p>
+                <div className="flex items-center gap-2 mt-4 text-sm font-medium text-white/80">
                   <Star className="w-4 h-4 fill-[#7CFF01] text-[#7CFF01]" />
                   <span>{userProfile.points.toLocaleString()} Points</span>
                 </div>
               </div>
 
-              <div className="relative z-10 flex justify-between items-end border-t border-[#0F0F0F]/10 pt-6">
+              <div className="relative z-10 flex justify-between items-end border-t border-white/10 pt-6">
                 <div>
-                  <p className="text-[0.65rem] font-bold tracking-widest text-[#0F0F0F]/50 uppercase mb-1">Member Since</p>
-                  <p className="text-sm font-mono text-[#0F0F0F]">2026</p>
+                  <p className="text-[0.65rem] font-bold tracking-widest text-white/50 uppercase mb-1">Member Since</p>
+                  <p className="text-sm font-mono text-white/90">2026</p>
                 </div>
-                <div className="flex gap-1">
+                <div className="flex gap-1.5 opacity-50">
                   {[1, 2, 3, 4].map(i => (
-                    <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#0F0F0F]/20"></div>
+                    <div key={i} className="w-2 h-2 rounded-full bg-white shadow-[0_0_5px_white]"></div>
                   ))}
                 </div>
               </div>
