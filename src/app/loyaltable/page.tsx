@@ -168,21 +168,6 @@ export default async function LoyaltableDashboard() {
             </div>
           </div>
         </div>
-      </div>
-      <style jsx global>{`
-        .perspective {
-          perspective: 1000px;
-        }
-        .transform-style-3d {
-          transform-style: preserve-3d;
-        }
-        .rotate-y-2 {
-          transform: rotateY(5deg);
-        }
-        .rotate-x-2 {
-          transform: rotateX(5deg);
-        }
-      `}</style>
     </div>
   )
 }
