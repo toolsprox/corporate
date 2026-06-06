@@ -19,15 +19,18 @@ export default function StudentsPage() {
         className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-[#7CFF01] rounded-full blur-[150px] opacity-[0.10] pointer-events-none z-0"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-10">
+      {/* --- HERO SECTION --- */}
+      <section className="relative min-h-[90vh] flex flex-col md:flex-row items-center justify-between gap-6 pt-32 pb-16 px-4 md:px-8 max-w-7xl mx-auto z-10">
+        
+        {/* Left Column: Text & CTAs */}
         <motion.div 
           style={{ y }}
-          initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, type: "spring" }}
-          className="text-center mb-24 max-w-4xl mx-auto"
+          initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, type: "spring" }}
+          className="w-full md:w-[55%] flex flex-col justify-center text-left"
         >
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center space-x-2 bg-[#7CFF01]/10 text-[#5CB800] rounded-full px-5 py-2 mb-8 border border-[#7CFF01]/20 cursor-pointer"
+            className="inline-flex items-center space-x-2 bg-[#7CFF01]/10 text-[#5CB800] rounded-full px-5 py-2 mb-8 border border-[#7CFF01]/20 cursor-pointer self-start"
           >
             <GraduationCap className="w-4 h-4" />
             <span className="text-xs font-bold uppercase tracking-widest">Student Exclusive</span>
@@ -41,11 +44,11 @@ export default function StudentsPage() {
             </span>
           </h1>
           
-          <p className="text-xl text-black/60 mb-10 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xl text-black/60 mb-10 leading-relaxed max-w-lg">
             Looking for an affordable Indian restaurant in London without compromising on quality? Show your valid student ID and unlock an exclusive 15% discount for you and your mates.
           </p>
           
-          <div className="flex justify-center gap-6 mb-16">
+          <div className="flex gap-6">
             <Link href="/reserve?segment=student" className="group relative bg-[#0F0F0F] text-white font-bold px-10 py-5 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_rgba(124,255,1,0.3)] transition-all">
               <span className="relative z-10 flex items-center">
                 Claim 15% Off Table <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -56,12 +59,19 @@ export default function StudentsPage() {
               </span>
             </Link>
           </div>
+        </motion.div>
 
-          {/* Spinning Food Element */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }}
-            className="relative w-full max-w-[500px] h-[500px] mx-auto rounded-[3rem] flex items-center justify-center"
-          >
+        {/* Right Column: Spinning Food */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="w-full md:w-[45%] relative flex justify-center items-center mt-12 md:mt-0"
+        >
+          <div className="w-full max-w-[500px] aspect-square relative flex items-center justify-center">
+            {/* Ambient Glow */}
+            <div className="absolute inset-0 bg-[#7CFF01] rounded-full blur-[100px] opacity-10 pointer-events-none scale-110"></div>
+            
             <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 40, ease: "linear" }} className="w-[85%] h-[85%] relative z-10 origin-center filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.2)]">
               <div className="smoke-container">
                 <div className="smoke"></div>
@@ -71,10 +81,11 @@ export default function StudentsPage() {
               </div>
               <Image src="/images/hero_biryani_top.png" alt="Signature Biryani" fill className="object-contain mix-blend-multiply" priority />
             </motion.div>
-          </motion.div>
+          </div>
         </motion.div>
+      </section>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-16 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/10 to-transparent -z-10 hidden md:block"></div>
           
           {[

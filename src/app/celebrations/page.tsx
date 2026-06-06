@@ -19,15 +19,18 @@ export default function CelebrationsPage() {
       <motion.div animate={{ y: [0, 30, 0], scale: [1, 1.5, 1] }} transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[40%] right-[15%] w-12 h-12 rounded-full bg-[#5CB800]/20 blur-md pointer-events-none" />
       <motion.div animate={{ y: [0, -40, 0], x: [0, 20, 0] }} transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }} className="absolute bottom-[20%] left-[20%] w-32 h-32 rounded-full bg-orange-400/10 blur-xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center pt-10">
+      {/* --- HERO SECTION --- */}
+      <section className="relative min-h-[90vh] flex flex-col md:flex-row items-center justify-between gap-6 pt-32 pb-16 px-4 md:px-8 max-w-7xl mx-auto z-10">
+        
+        {/* Left Column: Text & CTAs */}
         <motion.div 
           style={{ y }}
-          initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, type: "spring" }}
-          className="max-w-4xl mx-auto"
+          initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, type: "spring" }}
+          className="w-full md:w-[55%] flex flex-col justify-center text-left"
         >
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center space-x-2 bg-white text-[#0F0F0F] rounded-full px-5 py-2 mb-8 shadow-sm border border-black/5 cursor-pointer"
+            className="inline-flex items-center space-x-2 bg-white text-[#0F0F0F] rounded-full px-5 py-2 mb-8 shadow-sm border border-black/5 cursor-pointer self-start"
           >
             <Cake className="w-4 h-4 text-[#5CB800]" />
             <span className="text-xs font-bold uppercase tracking-widest">Family & Celebrations</span>
@@ -41,15 +44,22 @@ export default function CelebrationsPage() {
             </span>
           </h1>
           
-          <p className="text-xl text-black/60 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-black/60 mb-12 max-w-lg leading-relaxed">
             Whether it's a family reunion, a milestone birthday, or a weekend gathering, Masakali London is the perfect venue for large groups seeking the best Indian food in the city.
           </p>
+        </motion.div>
 
-          {/* Spinning Food Element */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }}
-            className="relative w-full max-w-[600px] h-[500px] mx-auto flex items-center justify-center mb-12"
-          >
+        {/* Right Column: Spinning Food */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="w-full md:w-[45%] relative flex justify-center items-center mt-12 md:mt-0"
+        >
+          <div className="w-full max-w-[500px] aspect-square relative flex items-center justify-center">
+            {/* Ambient Glow */}
+            <div className="absolute inset-0 bg-[#7CFF01] rounded-full blur-[100px] opacity-10 pointer-events-none scale-110"></div>
+            
             <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 45, ease: "linear" }} className="w-[85%] h-[85%] relative z-10 origin-center filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.15)]">
               <div className="smoke-container">
                 <div className="smoke"></div>
@@ -59,10 +69,11 @@ export default function CelebrationsPage() {
               </div>
               <Image src="/images/top_barbecue.png" alt="Signature Sharing Platter" fill className="object-contain mix-blend-multiply" priority />
             </motion.div>
-          </motion.div>
+          </div>
         </motion.div>
+      </section>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-16 text-left relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           
           <motion.div 
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
