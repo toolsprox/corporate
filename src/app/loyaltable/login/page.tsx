@@ -4,12 +4,12 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { createClient } from '@/lib/supabase/client'
-import { Phone, Lock, ArrowRight, Loader2, Info } from 'lucide-react'
+import { Mail, Lock, ArrowRight, Loader2, Info } from 'lucide-react'
 
 export default function LoginPage() {
-  const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
   const [token, setToken] = useState('')
-  const [step, setStep] = useState<'phone' | 'otp'>('phone')
+  const [step, setStep] = useState<'email' | 'otp'>('email')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const router = useRouter()
@@ -20,11 +20,8 @@ export default function LoginPage() {
     setLoading(true)
     setError(null)
 
-    // Format phone number (ensure it has +)
-    const formattedPhone = phone.startsWith('+') ? phone : `+${phone}`
-
     const { error } = await supabase.auth.signInWithOtp({
-      phone: formattedPhone,
+      email: email,
     })
 
     if (error) {
@@ -41,12 +38,10 @@ export default function LoginPage() {
     setLoading(true)
     setError(null)
 
-    const formattedPhone = phone.startsWith('+') ? phone : `+${phone}`
-
     const { data, error } = await supabase.auth.verifyOtp({
-      phone: formattedPhone,
+      email: email,
       token,
-      type: 'sms', // Supabase treats Twilio WhatsApp/SMS uniformly under 'sms' type for verification
+      type: 'email',
     })
 
     if (error) {
@@ -79,28 +74,28 @@ export default function LoginPage() {
           </div>
         )}
 
-        {step === 'phone' ? (
+        {step === 'email' ? (
           <form onSubmit={handleSendOtp} className="space-y-6">
             <div className="space-y-2">
-              <label className="text-xs font-bold text-white/80 uppercase tracking-wider">WhatsApp Number</label>
+              <label className="text-xs font-bold text-white/80 uppercase tracking-wider">Email Address</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-white/40">
-                  <Phone className="w-5 h-5" />
+                  <Mail className="w-5 h-5" />
                 </div>
                 <input
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="+44 7700 900000"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="vip@masakali.co.uk"
                   required
                   className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-12 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:border-[#7CFF01] focus:ring-1 focus:ring-[#7CFF01] transition-all"
                 />
               </div>
             </div>
 
-            <div className="p-4 rounded-lg bg-[#7CFF01]/10 border border-[#7CFF01]/20 flex gap-3 text-sm text-[#7CFF01] items-start">
+            <div className="p-4 rounded-lg bg-blue-500/10 border border-blue-500/20 flex gap-3 text-sm text-blue-400 items-start">
               <Info className="w-5 h-5 shrink-0 mt-0.5" />
-              <p>Since we are in development mode, please make sure you have texted the Twilio join code to our sandbox number first!</p>
+              <p>We've temporarily switched to Email verification for easier testing. Just enter your email to get a 6-digit code!</p>
             </div>
 
             <button
@@ -128,7 +123,7 @@ export default function LoginPage() {
                   className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-12 pr-4 text-white tracking-widest placeholder:text-white/20 focus:outline-none focus:border-[#7CFF01] focus:ring-1 focus:ring-[#7CFF01] transition-all text-lg"
                 />
               </div>
-              <p className="text-xs text-white/40 mt-2 text-center">We sent a 6-digit code to your WhatsApp.</p>
+              <p className="text-xs text-white/40 mt-2 text-center">We sent a 6-digit code to your email.</p>
             </div>
 
             <button
@@ -141,10 +136,10 @@ export default function LoginPage() {
             
             <button
               type="button"
-              onClick={() => setStep('phone')}
+              onClick={() => setStep('email')}
               className="w-full text-center text-sm text-white/60 hover:text-white transition-colors"
             >
-              Use a different number
+              Use a different email
             </button>
           </form>
         )}

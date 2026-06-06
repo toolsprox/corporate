@@ -19,7 +19,7 @@ export default async function LoyaltableDashboard() {
         <div className="flex justify-between items-end mb-12">
           <div>
             <h1 className="text-4xl font-serif font-bold text-white mb-2">Welcome Back,</h1>
-            <p className="text-[#7CFF01] font-mono text-lg">{user.phone}</p>
+            <p className="text-[#7CFF01] font-mono text-lg">{user.email}</p>
           </div>
           <form action="/auth/signout" method="post">
             <button className="flex items-center gap-2 text-white/50 hover:text-white transition-colors">
