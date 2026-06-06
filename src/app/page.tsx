@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Star, Clock, CalendarDays, Users, ArrowRight, ChefHat, MapPin, Wine, CalendarHeart, GlassWater, Music, Quote, Heart, TrendingUp, Sparkles, Phone, ShoppingBag, GraduationCap, Briefcase } from 'lucide-react'
-import Magnetic from '@/components/shared/Magnetic'
 
 // Mock Data
 const occasions = [
@@ -73,17 +72,13 @@ export default function Home() {
           
           {/* Primary & Secondary CTAs Above Fold */}
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-            <Magnetic pullPower={0.4}>
-              <Link href="/reserve" className="w-full sm:w-auto bg-[#0F0F0F] text-white font-bold text-base px-8 py-4 rounded-2xl hover:bg-[#7CFF01] hover:text-black transition-all shadow-[0_15px_30px_rgba(0,0,0,0.15)] flex items-center justify-center group">
-                Reserve Your Table
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Magnetic>
-            <Magnetic pullPower={0.2}>
-              <Link href="/menu" className="w-full sm:w-auto bg-white border border-black/10 text-[#0F0F0F] font-bold text-base px-8 py-4 rounded-2xl hover:bg-black/5 transition-all text-center">
-                View Menu
-              </Link>
-            </Magnetic>
+            <Link href="/reserve" className="w-full sm:w-auto bg-[#0F0F0F] text-white font-bold text-base px-8 py-4 rounded-2xl hover:bg-[#7CFF01] hover:text-black transition-all shadow-[0_15px_30px_rgba(0,0,0,0.15)] flex items-center justify-center group">
+              Reserve Your Table
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link href="/menu" className="w-full sm:w-auto bg-white border border-black/10 text-[#0F0F0F] font-bold text-base px-8 py-4 rounded-2xl hover:bg-black/5 transition-all text-center">
+              View Menu
+            </Link>
           </div>
 
           <div className="mt-8 flex items-center gap-2 text-sm font-semibold text-black/60">

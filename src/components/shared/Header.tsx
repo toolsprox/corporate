@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import Magnetic from '@/components/shared/Magnetic'
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -26,11 +25,16 @@ export default function Header() {
   }, [])
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-8 py-4 ${
-        isScrolled ? 'py-4' : 'py-6'
-      }`}
-    >
+    <>
+      <div className="bg-[#7CFF01] text-[#0F0F0F] text-xs font-bold uppercase tracking-widest py-2 px-4 text-center z-[60] fixed top-0 w-full flex items-center justify-center gap-4 h-[36px]">
+        <span>✨ Experience our new Summer Tasting Menu</span>
+        <Link href="/menu" className="underline hover:no-underline font-black">View Menu</Link>
+      </div>
+      <header 
+        className={`fixed top-[36px] left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-8 py-4 ${
+          isScrolled ? 'py-2' : 'py-6'
+        }`}
+      >
       <div className={`max-w-7xl mx-auto rounded-full transition-all duration-300 ${isScrolled ? 'glass-floating' : 'bg-transparent'}`}>
         <div className="flex items-center justify-between px-6 py-4">
           
@@ -54,14 +58,12 @@ export default function Header() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#7CFF01] transition-all group-hover:w-full"></span>
               </Link>
             ))}
-            <Magnetic pullPower={0.3}>
-              <Link 
-                href="/reservations"
-                className="px-6 py-2.5 rounded-full bg-[#0F0F0F] text-white text-sm font-bold uppercase tracking-widest hover:bg-[#7CFF01] hover:text-[#0F0F0F] transition-all shadow-[0_4px_14px_rgba(6,78,59,0.3)] hover:shadow-[0_4px_20px_rgba(124,255,1,0.4)] block"
-              >
-                Book Table
-              </Link>
-            </Magnetic>
+            <Link 
+              href="/reservations"
+              className="px-6 py-2.5 rounded-full bg-[#0F0F0F] text-white text-sm font-bold uppercase tracking-widest hover:bg-[#7CFF01] hover:text-[#0F0F0F] transition-all shadow-[0_4px_14px_rgba(6,78,59,0.3)] hover:shadow-[0_4px_20px_rgba(124,255,1,0.4)]"
+            >
+              Book Table
+            </Link>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -102,5 +104,6 @@ export default function Header() {
         </motion.div>
       )}
     </header>
+    </>
   )
 }
