@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, Variants } from 'framer-motion'
 import { MapPin, ArrowRight, Star, Clock, ChefHat } from 'lucide-react'
 import { useParams } from 'next/navigation'
 import { useRef } from 'react'
@@ -21,7 +21,7 @@ export default function LocationPage() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 
   // Variants for staggered entrance
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -29,7 +29,7 @@ export default function LocationPage() {
     }
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 60 } }
   }

@@ -86,6 +86,7 @@ export default function StudentsPage() {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid md:grid-cols-3 gap-8 mt-16 relative">
           <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/10 to-transparent -z-10 hidden md:block"></div>
           
           {[
