@@ -26,16 +26,14 @@ export default function Header() {
 
   return (
     <>
-      <div className="bg-[#7CFF01] text-[#0F0F0F] text-xs font-bold uppercase tracking-widest py-2 px-4 text-center z-[60] fixed top-0 w-full flex items-center justify-center gap-4 h-[36px]">
+      <div className="bg-[#7CFF01] text-[#0F0F0F] text-xs font-bold uppercase tracking-widest py-2 px-4 text-center z-[60] absolute top-0 w-full flex items-center justify-center gap-4 h-[36px]">
         <span>✨ Experience our new Summer Tasting Menu</span>
         <Link href="/menu" className="underline hover:no-underline font-black">View Menu</Link>
       </div>
       <header 
-        className={`fixed top-[36px] left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-8 py-4 ${
-          isScrolled ? 'py-2' : 'py-6'
-        }`}
+        className="absolute top-[36px] left-0 right-0 z-50 px-4 sm:px-8 py-6"
       >
-      <div className={`max-w-7xl mx-auto rounded-full transition-all duration-300 ${isScrolled ? 'glass-floating' : 'bg-transparent'}`}>
+      <div className="max-w-7xl mx-auto rounded-full bg-transparent">
         <div className="flex items-center justify-between px-6 py-4">
           
           {/* Logo */}
