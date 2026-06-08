@@ -8,6 +8,7 @@ import MobileCTA from "@/components/shared/MobileCTA";
 import TouchRipple from "@/components/shared/TouchRipple";
 import AmbientAura from "@/components/shared/AmbientAura";
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+import Script from 'next/script'
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -32,7 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-  const gtmId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID; // Can be used for AW- or GTM- IDs
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID; 
+  const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
 
   return (
     <html lang="en" className={`${poppins.variable} antialiased h-full`}>
@@ -47,6 +49,15 @@ export default function RootLayout({
         </main>
         <Footer />
         {gaId && <GoogleAnalytics gaId={gaId} />}
+        {adsId && (
+          <Script id="google-ads-init" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('config', '${adsId}');
+            `}
+          </Script>
+        )}
         <MobileCTA />
       </body>
     </html>
