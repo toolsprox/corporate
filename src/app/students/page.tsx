@@ -110,18 +110,7 @@ export default function StudentsPage() {
       </div>
 
 
-      {/* --- OUR STORY (Authentic Copy) --- */}
-      <section className="py-24 bg-[#7CFF01]/5 relative z-10 border-y border-black/5">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-[#0F0F0F]">Masakali: Where Indian Flavours Soar</h2>
-          <p className="text-xl text-black/70 mb-8 leading-relaxed">
-            Inspired by the iconic Bollywood song Masakali, our name reflects the freedom, joy, and spirited energy we bring to every dining experience. Rooted in India’s timeless culinary traditions, our kitchen celebrates regional diversity while adding modern artistry.
-          </p>
-          <p className="text-lg text-black/60 font-medium">
-            From fragrant biryanis and rich curries to sizzling tandoor favourites, our menu delivers the true taste of India in every bite.
-          </p>
-        </div>
-      </section>
+
 
       {/* --- HOW IT WORKS --- */}
       <section className="py-24 bg-[#0F0F0F] text-white relative z-10">
