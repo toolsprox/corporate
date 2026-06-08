@@ -41,7 +41,7 @@ export default function CelebrationsPage() {
           </h1>
           
           <p className="text-xl text-black/60 mb-12 max-w-lg leading-relaxed">
-            Whether it's a family reunion, a milestone birthday, or a weekend gathering, Masakali London is the perfect venue for large groups seeking the best Indian food in the city.
+            The London branch of Masakali offers a vibrant dining experience where authentic Indian flavours meet contemporary culinary creativity. The perfect venue for large groups seeking the best Indian food in the city.
           </p>
 
           <div className="flex gap-6 mt-4">
@@ -143,6 +143,19 @@ export default function CelebrationsPage() {
         </div>
       </div>
 
+
+      {/* --- OUR STORY (Authentic Copy) --- */}
+      <section className="py-24 bg-[#7CFF01]/5 relative z-10 border-t border-black/5 mt-16">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-[#0F0F0F]">Masakali: Where Indian Flavours Soar</h2>
+          <p className="text-xl text-black/70 mb-8 leading-relaxed">
+            Inspired by the iconic Bollywood song Masakali, our name reflects the freedom, joy, and spirited energy we bring to every dining experience. Rooted in India’s timeless culinary traditions, our kitchen celebrates regional diversity while adding modern artistry.
+          </p>
+          <p className="text-lg text-black/60 font-medium">
+            From fragrant biryanis and rich curries to sizzling tandoor favourites, our menu delivers the true taste of India in every bite.
+          </p>
+        </div>
+      </section>
 
       {/* --- SOCIAL PROOF --- */}
       <section className="py-20 bg-white relative z-10 border-y border-black/5">
