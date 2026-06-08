@@ -52,11 +52,11 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="mailto:reservations@masakali.co.uk" className="flex items-center gap-3 text-sm text-[#0F0F0F]/70 hover:text-[#0F0F0F] transition-colors group">
+              <a href="mailto:info@masakali.co.uk" className="flex items-center gap-3 text-sm text-[#0F0F0F]/70 hover:text-[#0F0F0F] transition-colors group">
                 <div className="p-2 rounded-full bg-white/50 group-hover:bg-[#7CFF01] transition-colors">
                   <Mail className="w-4 h-4 text-[#0F0F0F]" />
                 </div>
-                reservations@masakali.co.uk
+                info@masakali.co.uk
               </a>
             </li>
             <li>
@@ -64,7 +64,7 @@ export default function Footer() {
                 <div className="p-2 rounded-full bg-white/50 group-hover:bg-[#7CFF01] transition-colors shrink-0">
                   <MapPin className="w-4 h-4 text-[#0F0F0F]" />
                 </div>
-                <span className="leading-relaxed">15 Berkeley Square<br />Mayfair, London<br />W1J 6EG</span>
+                <span className="leading-relaxed">Stanhope<br />London</span>
               </a>
             </li>
           </ul>
@@ -74,17 +74,9 @@ export default function Footer() {
         <div className="space-y-6">
           <h4 className="text-xs font-bold tracking-widest text-[#0F0F0F] uppercase">Hours</h4>
           <ul className="space-y-3 text-sm text-[#0F0F0F]/70">
-            <li className="flex justify-between border-b border-black/5 pb-2">
-              <span>Mon - Wed</span>
-              <span className="font-medium text-[#0F0F0F]">12:00 - 23:00</span>
-            </li>
-            <li className="flex justify-between border-b border-black/5 pb-2">
-              <span>Thu - Sat</span>
-              <span className="font-medium text-[#0F0F0F]">12:00 - 00:30</span>
-            </li>
             <li className="flex justify-between pb-2">
-              <span>Sunday</span>
-              <span className="font-medium text-[#0F0F0F]">12:00 - 22:00</span>
+              <span>Monday - Sunday</span>
+              <span className="font-medium text-[#0F0F0F]">12:00 PM - 11:00 PM</span>
             </li>
           </ul>
           
