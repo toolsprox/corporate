@@ -1,10 +1,16 @@
 import Link from 'next/link'
 import { MapPin, Phone, Mail } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+
+const AD_LANDING_PAGES = ['/corporate', '/students', '/celebrations']
 
 export default function Footer() {
+  const pathname = usePathname()
+  const isAdLandingPage = AD_LANDING_PAGES.includes(pathname)
+
   return (
     <footer className="relative mt-24 glass-floating border-t border-white/50 py-16 px-6 sm:px-12 z-10 mx-4 sm:mx-8 mb-8 rounded-3xl">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className={`max-w-7xl mx-auto grid grid-cols-1 ${isAdLandingPage ? 'md:grid-cols-3' : 'md:grid-cols-4'} gap-12`}>
         
         {/* Brand Column */}
         <div className="space-y-6 md:col-span-1">
@@ -17,17 +23,19 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Links Column */}
-        <div className="space-y-6">
-          <h4 className="text-xs font-bold tracking-widest text-[#0F0F0F] uppercase">Explore</h4>
-          <ul className="space-y-4">
-            <li><Link href="/" className="text-sm text-[#0F0F0F]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">Home<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span></Link></li>
-            <li><Link href="/corporate" className="text-sm text-[#0F0F0F]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">Corporate Dining<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span></Link></li>
-            <li><Link href="/students" className="text-sm text-[#0F0F0F]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">Student Offers<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span></Link></li>
-            <li><Link href="/celebrations" className="text-sm text-[#0F0F0F]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">Family & Celebrations<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span></Link></li>
-            <li><Link href="/locations/kings-cross" className="text-sm text-[#0F0F0F]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">Kings Cross<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span></Link></li>
-          </ul>
-        </div>
+        {/* Links Column - HIDDEN ON AD PAGES */}
+        {!isAdLandingPage && (
+          <div className="space-y-6">
+            <h4 className="text-xs font-bold tracking-widest text-[#0F0F0F] uppercase">Explore</h4>
+            <ul className="space-y-4">
+              <li><Link href="/" className="text-sm text-[#0F0F0F]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">Home<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span></Link></li>
+              <li><Link href="/corporate" className="text-sm text-[#0F0F0F]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">Corporate Dining<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span></Link></li>
+              <li><Link href="/students" className="text-sm text-[#0F0F0F]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">Student Offers<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span></Link></li>
+              <li><Link href="/celebrations" className="text-sm text-[#0F0F0F]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">Family & Celebrations<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span></Link></li>
+              <li><Link href="/locations/kings-cross" className="text-sm text-[#0F0F0F]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">Kings Cross<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span></Link></li>
+            </ul>
+          </div>
+        )}
 
         {/* Contact Column */}
         <div className="space-y-6">
