@@ -1,9 +1,9 @@
-'use client'
+﻿'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import React from 'react'
 
-export default function PulseCTA({ href, children, className = "" }: { href: string, children: React.ReactNode, className?: string }) {
+export default function PulseCTA({ href, children, className = "", target, rel }: { href: string, children: React.ReactNode, className?: string, target?: string, rel?: string }) {
   return (
     <div className="relative inline-block">
       {/* Clean Box Shadow Ripple (Prevents border radius distortion) */}
@@ -30,10 +30,11 @@ export default function PulseCTA({ href, children, className = "" }: { href: str
       
       {/* Actual Button with Tactile Squish on Tap */}
       <motion.div whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-        <Link href={href} className={`relative z-10 block ${className}`}>
+        <Link href={href} target={target} rel={rel} className={`relative z-10 block ${className}`}>
           {children}
         </Link>
       </motion.div>
     </div>
   )
 }
+
