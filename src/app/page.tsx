@@ -71,7 +71,7 @@ export default function CorporatePage() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="flex gap-4 mt-4">
-              <PulseCTA href="https://www.opentable.co.uk/restaurant/profile/361344" target="_blank" rel="noopener noreferrer" className="group relative bg-[#0F0F0F] text-white font-bold px-10 py-5 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_rgba(124,255,1,0.3)] transition-all">
+              <PulseCTA href="https://www.opentable.co.uk/r/masakali-restaurant-euston-london?corrid=41f8fc28-8609-4b5f-8750-347046547a0c&avt=eyJ2IjozLCJtIjowLCJwIjowLCJzIjowLCJuIjowfQ&p=2&sd=2026-06-09T19%3A00%3A00" target="_blank" rel="noopener noreferrer" className="group relative bg-[#0F0F0F] text-white font-bold px-10 py-5 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_rgba(124,255,1,0.3)] transition-all">
                 <span className="relative z-10 flex items-center">
                   Book Corporate Table <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </span>
@@ -162,11 +162,12 @@ export default function CorporatePage() {
       <section className="py-24 max-w-4xl mx-auto px-4 text-center relative z-10">
         <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-[#0F0F0F]">Book Your London Business Lunch</h2>
         <p className="text-xl text-black/60 mb-10">Stop searching for a "lunch restaurant near me" and let our events team craft the perfect itinerary for your corporate clients in central London.</p>
-        <Link href="https://www.opentable.co.uk/restaurant/profile/361344" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-[#0F0F0F] text-white font-bold text-lg px-12 py-5 rounded-2xl hover:bg-[#7CFF01] hover:text-black transition-all shadow-xl group">
+        <Link href="https://www.opentable.co.uk/r/masakali-restaurant-euston-london?corrid=41f8fc28-8609-4b5f-8750-347046547a0c&avt=eyJ2IjozLCJtIjowLCJwIjowLCJzIjowLCJuIjowfQ&p=2&sd=2026-06-09T19%3A00%3A00" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-[#0F0F0F] text-white font-bold text-lg px-12 py-5 rounded-2xl hover:bg-[#7CFF01] hover:text-black transition-all shadow-xl group">
           Enquire Now <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
         </Link>
       </section>
     </main>
   )
 }
+
 

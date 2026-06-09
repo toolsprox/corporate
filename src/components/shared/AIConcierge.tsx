@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -55,13 +55,13 @@ export default function AIConcierge() {
       } else if (lowerText.includes('location') || lowerText.includes('where') || lowerText.includes('address')) {
         aiResponse = "We are located at 48 Stanhope St, London (NW1 3EX), right in the heart of the city. There's a handy 'Get Directions' button on our page!"
       } else if (lowerText.includes('park')) {
-        aiResponse = "Good news—there is free street parking right near the restaurant after 6:30 PM! Shall I help you book a table for tonight?"
+        aiResponse = "Good newsâ€”there is free street parking right near the restaurant after 6:30 PM! Shall I help you book a table for tonight?"
       } else if (lowerText.includes('birthday') || lowerText.includes('celebrat') || lowerText.includes('anniversary')) {
-        aiResponse = "I love a good celebration! 🎉 If you book now and mention it in the notes, our chef will prepare a complimentary signature dessert with a sparkler for you. Let's get that reserved!"
+        aiResponse = "I love a good celebration! ðŸŽ‰ If you book now and mention it in the notes, our chef will prepare a complimentary signature dessert with a sparkler for you. Let's get that reserved!"
       } else if (lowerText.includes('book') || lowerText.includes('reserv') || lowerText.includes('table')) {
         aiResponse = "Perfect! You can reserve your table instantly through OpenTable by clicking the green button right below this chat."
       } else if (lowerText.includes('hello') || lowerText.includes('hi') || lowerText.includes('hey')) {
-        aiResponse = "Hello there! 👋 I am the Masakali AI Concierge. I know everything about our menu, our chefs, and our availability. What can I help you with today?"
+        aiResponse = "Hello there! ðŸ‘‹ I am the Masakali AI Concierge. I know everything about our menu, our chefs, and our availability. What can I help you with today?"
       } else {
         aiResponse = "That's a fantastic question. The absolute best way to experience everything Masakali has to offer is to join us for a meal. Shall we secure your spot?"
       }
@@ -160,7 +160,7 @@ export default function AIConcierge() {
             {/* Direct Booking CTA (Always visible when AI mentions booking) */}
             {messages.length > 1 && !isTyping && (
                <div className="px-4 py-2 bg-[#FDFBF7]">
-                 <a href="https://www.opentable.co.uk/restaurant/profile/361344" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="w-full bg-[#7CFF01] text-black font-bold py-3 rounded-xl flex justify-center items-center gap-2 hover:bg-[#68d600] transition-colors text-sm shadow-sm">
+                 <a href="https://www.opentable.co.uk/r/masakali-restaurant-euston-london?corrid=41f8fc28-8609-4b5f-8750-347046547a0c&avt=eyJ2IjozLCJtIjowLCJwIjowLCJzIjowLCJuIjowfQ&p=2&sd=2026-06-09T19%3A00%3A00" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="w-full bg-[#7CFF01] text-black font-bold py-3 rounded-xl flex justify-center items-center gap-2 hover:bg-[#68d600] transition-colors text-sm shadow-sm">
                     <CalendarDays className="w-4 h-4"/> Book a Table Now
                  </a>
                </div>
@@ -194,3 +194,4 @@ export default function AIConcierge() {
     </>
   )
 }
+
