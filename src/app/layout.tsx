@@ -44,9 +44,11 @@ export default function RootLayout({
         <TouchRipple />
         <Preloader />
         
-        <Header />`n        <main className="flex-grow z-10 relative">
+        <Header />
+        <main className="flex-grow z-10 relative">
           {children}
-        </main>`n        <Footer />
+        </main>
+        <Footer />
         
         {gaId && <GoogleAnalytics gaId={gaId} />}
         {adsId && (
