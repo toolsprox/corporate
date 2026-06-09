@@ -45,14 +45,14 @@ export default function CorporatePage() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
               className="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight"
             >
-              Impress Your Clients. <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5CB800] to-[#7CFF01]">Seal the Deal.</span>
+              The Best Business Lunch in <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5CB800] to-[#7CFF01]">London.</span>
             </motion.h1>
             
             <motion.p 
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}
               className="text-black/60 text-xl mb-10 leading-relaxed"
             >
-              The London branch of Masakali offers a vibrant dining experience where authentic Indian flavours meet contemporary culinary creativity. The ultimate setting for business lunches and corporate dinners.
+              When searching for the <strong>best indian restaurant near me</strong> to host a business lunch or group dining event, Masakali stands unmatched. Located conveniently between Euston and Kings Cross, we offer a vibrant, premium Indian restaurant experience where authentic flavours meet contemporary corporate hospitality. 
             </motion.p>
             
             <motion.div variants={listVariants} initial="hidden" animate="show" className="space-y-6 mb-12">
@@ -122,8 +122,8 @@ export default function CorporatePage() {
       {/* --- PRIVATE DINING SPACES --- */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 border-t border-black/5">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-[#0F0F0F]">Private Dining & Events</h2>
-          <p className="text-black/60 text-lg">Tailored spaces for intimate meetings or full-scale corporate parties.</p>
+          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-[#0F0F0F]">Private & Group Dining London</h2>
+          <p className="text-black/60 text-lg">Looking for an Indian restaurant for groups? We offer tailored spaces for intimate meetings or full-scale corporate parties near Euston and Kings Cross.</p>
         </div>
         
         <div className="md:hidden flex items-center justify-end mt-8 mb-[-2rem] text-[#7CFF01] font-bold text-xs uppercase tracking-widest animate-pulse relative z-20">
@@ -160,8 +160,8 @@ export default function CorporatePage() {
 
       {/* --- FINAL CTA --- */}
       <section className="py-24 max-w-4xl mx-auto px-4 text-center relative z-10">
-        <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-[#0F0F0F]">Secure Your Corporate Booking</h2>
-        <p className="text-xl text-black/60 mb-10">Our events team will work with you to craft the perfect itinerary and menu for your clients or team.</p>
+        <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-[#0F0F0F]">Book Your London Business Lunch</h2>
+        <p className="text-xl text-black/60 mb-10">Stop searching for a "lunch restaurant near me" and let our events team craft the perfect itinerary for your corporate clients in central London.</p>
         <Link href="/reserve?segment=corporate" className="inline-flex items-center bg-[#0F0F0F] text-white font-bold text-lg px-12 py-5 rounded-2xl hover:bg-[#7CFF01] hover:text-black transition-all shadow-xl group">
           Enquire Now <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
         </Link>
