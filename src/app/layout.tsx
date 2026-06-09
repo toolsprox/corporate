@@ -43,11 +43,11 @@ export default function RootLayout({
         <AmbientAura />
         <TouchRipple />
         <Preloader />
-        <Header />
+        
         <main className="flex-grow z-10 relative">
           {children}
         </main>
-        <Footer />
+        
         {gaId && <GoogleAnalytics gaId={gaId} />}
         {adsId && (
           <Script id="google-ads-init" strategy="afterInteractive">
@@ -63,3 +63,4 @@ export default function RootLayout({
     </html>
   );
 }
+
