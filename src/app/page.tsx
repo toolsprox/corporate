@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -85,16 +85,17 @@ export default function CorporatePage() {
 
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }}
-            className="relative h-[600px] w-full flex items-center justify-center group"
+            className="relative h-[600px] w-full flex items-center justify-center group p-8 md:p-12"
           >
-            <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 50, ease: "linear" }} className="w-[90%] h-[90%] relative z-10 origin-center filter drop-shadow-[0_30px_40px_rgba(124,255,1,0.15)] group-hover:scale-105 transition-transform duration-700">
-              <div className="smoke-container">
-                <div className="smoke"></div>
-                <div className="smoke"></div>
-                <div className="smoke"></div>
-                <div className="smoke"></div>
-              </div>
-              <Image src="/images/user_upload_1.png" alt="Signature Corporate Dish" fill className="object-contain opacity-90" priority />
+            {/* Subtle Dashed Ring */}
+            <motion.div 
+              animate={{ rotate: 360 }} 
+              transition={{ repeat: Infinity, duration: 120, ease: "linear" }}
+              className="absolute inset-4 md:inset-8 rounded-full border-[1.5px] border-dashed border-black/15 pointer-events-none"
+            ></motion.div>
+            
+            <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 50, ease: "linear" }} className="w-full h-full relative z-10 origin-center filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)] rounded-full group-hover:scale-105 transition-transform duration-700">
+              <Image src="/images/user_upload_1.png" alt="Signature Corporate Dish" fill className="object-contain" priority />
             </motion.div>
             
             {/* Floating Glass Card */}
